@@ -1,0 +1,39 @@
+.jobCard {
+    display: flex;
+    position: relative;
+    gap: 1rem;
+    padding: 1rem;
+    width: 24.5rem;
+    background: $oldLace;
+    border-radius: 1rem;
+    box-shadow: .5rem 1rem 2rem rgba(0,0,0,.1);
+    &:hover {
+        background: $blueMensell;
+        color: #fff;
+        .jobCard__link {
+            color: #fff;
+        }
+    }
+    &__details {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+    &__company {
+        font-size: 1.3rem;
+    }
+    &__description {
+        font-size: 1.1rem;
+    }
+    &__link {
+        position: absolute;
+        right: 1rem;
+        bottom: .2rem;
+        color: $blueMensell;
+        text-decoration: underline;
+        font-size: 1.2rem;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

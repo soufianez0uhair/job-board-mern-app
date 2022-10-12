@@ -1,0 +1,29 @@
+.icon {
+    &--search {
+        color: #fff;
+        font-size: 1.5rem;
+        &-box {
+            background: $richBlack;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 7%;
+        }
+    }
+    &--edit {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        font-size: 2rem;
+        &:hover {
+            color: #fff;
+        }
+    }
+    &--settings {
+        font-size: 1.8rem;
+        &:hover {
+            cursor: pointer;
+            color: $blueMensell;
+        }
+    }
+}

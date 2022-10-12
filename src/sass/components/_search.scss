@@ -1,0 +1,25 @@
+.search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    justify-content: center;
+    &__form {
+        width: 50rem;
+        display: flex;
+        align-items: stretch;
+    }
+    &__input {
+        width: 93%;
+        border: .1rem solid #000;
+        background: $bone;
+        padding: 1rem 1.5rem;
+        font-size: 1.5rem;
+    }
+    &__title {
+        font-size: 3rem;
+        span {
+            color: $blueMensell;
+        }
+    }
+}

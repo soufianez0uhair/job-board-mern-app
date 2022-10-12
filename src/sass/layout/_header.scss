@@ -1,0 +1,21 @@
+.header {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__links {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+    &__link {
+        font-size: 1.5rem;
+        &:hover {
+            color: $blueMensell;
+            cursor: pointer;
+        }
+    }
+    .logo {
+        width: 7rem;
+    }
+}

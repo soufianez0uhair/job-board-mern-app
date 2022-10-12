@@ -1,0 +1,31 @@
+.auth {
+    min-height: calc(100vh - 7rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        box-shadow: .5rem 1rem 2rem rgba(0,0,0,.1);
+        padding: 2rem;
+        border-radius: 1rem;
+        label {
+            font-size: 1.3rem;
+        }
+    }
+    &__title {
+        font-size: 3rem;
+    }
+    &__input {
+        border: .1rem solid rgba(0,0,0,.5);
+        border-radius: 1rem;
+        font-size: 1.3rem;
+        padding: .5rem 1rem;
+        width: 25rem;
+    }
+    &__error {
+        color: red;
+        font-size: 1.3rem;
+    }
+}

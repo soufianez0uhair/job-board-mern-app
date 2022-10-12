@@ -1,0 +1,9 @@
+.btn {
+    padding: 1rem;
+    background: $blueMensell;
+    color: #fff;
+    border-radius: 1rem;
+    &--delete {
+        background: red;
+    }
+}

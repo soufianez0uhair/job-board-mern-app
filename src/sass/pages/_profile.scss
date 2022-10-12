@@ -1,0 +1,16 @@
+.profile {
+    display: flex;
+    justify-content: center;
+    &__details {
+        width: 50rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    &__name {
+        font-size: 3.5rem;
+    }
+    &__title {
+        font-size: 3rem;
+    }
+}
