@@ -8,6 +8,9 @@
             align-items: center;
             justify-content: center;
             width: 7%;
+            @include breakpoints($mobile) {
+                width: 13%;
+            }
         }
     }
     &--edit {

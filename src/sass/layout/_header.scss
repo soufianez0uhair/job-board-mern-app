@@ -3,6 +3,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include breakpoints($mobile) {
+        flex-direction: column;
+    }
     &__links {
         display: flex;
         gap: 1rem;

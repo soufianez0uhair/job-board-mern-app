@@ -6,6 +6,9 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 600px) {
+    html {
+      font-size: 55%; } }
 
 img {
   width: 100%; }
@@ -35,6 +38,9 @@ body {
     align-items: center;
     justify-content: center;
     width: 7%; }
+    @media (max-width: 500px) {
+      .icon--search-box {
+        width: 13%; } }
 
 .icon--edit {
   position: absolute;
@@ -60,14 +66,24 @@ body {
     width: 50rem;
     display: flex;
     align-items: stretch; }
+    @media (max-width: 500px) {
+      .search__form {
+        width: 30rem; } }
   .search__input {
     width: 93%;
     border: .1rem solid #000;
     background: #DDDBCB;
     padding: 1rem 1.5rem;
     font-size: 1.5rem; }
+    @media (max-width: 500px) {
+      .search__input {
+        width: 87%; } }
   .search__title {
     font-size: 3rem; }
+    @media (max-width: 500px) {
+      .search__title {
+        font-size: 2.5rem;
+        text-align: center; } }
     .search__title span {
       color: #1B9AAA; }
 
@@ -115,7 +131,11 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 50rem; }
+  max-width: 51rem;
+  gap: 1rem; }
+  @media (max-width: 500px) {
+    .jobs {
+      justify-content: center; } }
   .jobs__title {
     font-size: 3.5rem; }
 
@@ -124,6 +144,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center; }
+  @media (max-width: 500px) {
+    .header {
+      flex-direction: column; } }
   .header__links {
     display: flex;
     gap: 1rem;
@@ -142,7 +165,8 @@ body {
   align-items: center;
   min-height: calc(100vh - 8rem);
   justify-content: center;
-  gap: 2rem; }
+  gap: 2rem;
+  padding: 0 1.5rem; }
 
 .auth {
   min-height: calc(100vh - 7rem);
@@ -205,6 +229,9 @@ body {
 .profile {
   display: flex;
   justify-content: center; }
+  @media (max-width: 500px) {
+    .profile {
+      padding: 1.5rem; } }
   .profile__details {
     width: 50rem;
     display: flex;
@@ -212,8 +239,14 @@ body {
     gap: 1.5rem; }
   .profile__name {
     font-size: 3.5rem; }
+    @media (max-width: 500px) {
+      .profile__name {
+        font-size: 2.3rem; } }
   .profile__title {
     font-size: 3rem; }
+    @media (max-width: 500px) {
+      .profile__title {
+        font-size: 2.3rem; } }
 
 .settings {
   display: flex;

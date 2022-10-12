@@ -61,7 +61,7 @@ const Settings = () => {
 
     return (
         <form onSubmit={(e) => handleSubmit(e)} className="settings">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">New Email</label>
             <input type="text" id="email" name="email" value={user.email} onChange={(e) => handleChange(e)} className="settings__input" />
             <label htmlFor="password">Confirm Password</label>
             <input type="password" id="password" name="password" value={user.password} onChange={(e) => handleChange(e)} className="settings__input" />
