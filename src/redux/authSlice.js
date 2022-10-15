@@ -57,6 +57,24 @@ export const updateEmail = createAsyncThunk('auth/updateEmail', async (user, thu
     }
 })
 
+export const updatePassword = createAsyncThunk('auth/updatePassword', async (user, thunkAPI) => {
+    try {
+        const response = await axios.patch(`${USERS_API}/update/password`, user, {
+            headers: {
+                authorization: `Bearer ${JSON.parse(localStorage.getItem('user')).token}`
+            }
+        });
+
+        return response.data.data;
+    } catch(err) {
+        if(!err.response) {
+            throw err.message;
+        }
+
+        throw thunkAPI.rejectWithValue(err.response.data.message);
+    }
+})
+
 const authSlice = createSlice({
     name: 'auth',
     initialState,
@@ -67,8 +85,9 @@ const authSlice = createSlice({
             state.status = 'idle';
             state.error = null;
         },
-        resetUpdateStatus(state) {
+        resetUpdateStatusAndError(state) {
             state.updateStatus = 'idle';
+            state.error = null;
         }
     },
     extraReducers(builder) {
@@ -77,7 +96,6 @@ const authSlice = createSlice({
                 state.status = 'loading';
             })
             .addCase(registerUser.fulfilled, (state, action) => {
-                console.log(action.payload);
                 state.status = 'succeeded';
                 state.user = action.payload;
                 localStorage.setItem('user', JSON.stringify(action.payload));
@@ -108,11 +126,21 @@ const authSlice = createSlice({
                 state.updateStatus = 'failed';
                 state.error = action.payload;
             })
+            .addCase(updatePassword.fulfilled, (state, action) => {
+                state.updateStatus = 'succeeded';
+                localStorage.setItem('user', JSON.stringify(action.payload));
+                state.user = action.payload;
+                state.error = null;
+            })
+            .addCase(updatePassword.rejected, (state, action) => {
+                state.updatePassword = 'failed';
+                state.error = action.payload;
+            })
     }
 })
 
 export default authSlice.reducer;
-export const {logOut, resetUpdateStatus} = authSlice.actions;
+export const {logOut, resetUpdateStatusAndError} = authSlice.actions;
 export const selectUser = state => state.auth.user;
 export const getStatusAuth = state => state.auth.status;
 export const getErrorAuth = state => state.auth.error;
